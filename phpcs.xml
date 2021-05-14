@@ -464,6 +464,8 @@
 		</properties>
 	</rule>
 
+	<rule ref="WordPress.Security.ValidatedSanitizedInput.InputNotValidated"/>
+
 	<!--
 	#############################################################################
 	Code style sniffs for more recent PHP features and syntaxes.
