@@ -17,11 +17,6 @@
 	<rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
 	<rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
 	<rule ref="Generic.Classes.DuplicateClassName"/>
-	<rule ref="Generic.Strings.UnnecessaryStringConcat">
-		<properties>
-			<property name="allowMultiline" value="true"/>
-		</properties>
-	</rule>
 
 	<!-- More generic PHP best practices.
 		 https://github.com/WordPress/WordPress-Coding-Standards/issues/607 -->
@@ -45,38 +40,6 @@
 	<rule ref="PEAR.Files.IncludingFile.UseRequireOnce">
 		<type>warning</type>
 	</rule>
-
-	<!--
-	#############################################################################
-	Handbook: PHP - Single and Double Quotes.
-	Ref: https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#single-and-double-quotes
-	#############################################################################
-	-->
-	<!-- Covers rule: Use single and double quotes when appropriate.
-		 If you're not evaluating anything in the string, use single quotes. -->
-	<rule ref="Squiz.Strings.DoubleQuoteUsage.NotRequired"/>
-
-	<!--
-	#############################################################################
-	Handbook: PHP - Brace Style.
-	Ref: https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#brace-style
-	#############################################################################
-	-->
-	<!-- Covers rule: Braces shall be used for all blocks. -->
-	<rule ref="Squiz.ControlStructures.ControlSignature"/>
-
-	<!-- Covers rule: Braces should always be used, even when they are not required. -->
-	<rule ref="Generic.ControlStructures.InlineControlStructure"/>
-
-
-	<!--
-	#############################################################################
-	Handbook: PHP - Use elseif, not else if.
-	Ref: https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#use-elseif-not-else-if
-	#############################################################################
-	-->
-	<!-- Covers rule: ... use elseif for conditionals. -->
-	<rule ref="PSR2.ControlStructures.ElseIfDeclaration"/>
 
 	<!--
 	#############################################################################
@@ -128,26 +91,6 @@
 	<rule ref="Generic.PHP.DisallowShortOpenTag"/>
 	<rule ref="Generic.PHP.DisallowAlternativePHPTags"/>
 
-	<!-- Covers rule: Omitting the closing PHP tag at the end of a file is preferred. -->
-	<rule ref="PSR2.Files.ClosingTag"/>
-
-	<!-- Covers rule: Define a function like so: function my_function( $param1 = 'foo', $param2 = 'bar' ) { -->
-	<rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie">
-		<properties>
-			<property name="checkClosures" value="true"/>
-		</properties>
-	</rule>
-	<rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
-		<properties>
-			<property name="equalsSpacing" value="1"/>
-			<property name="requiredSpacesAfterOpen" value="1"/>
-			<property name="requiredSpacesBeforeClose" value="1"/>
-		</properties>
-	</rule>
-	<rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingBeforeClose">
-		<severity>0</severity>
-	</rule>
-
 	<!-- Rule: In a switch block, there must be no space before the colon for a case statement. -->
 	<!-- Covered by the PSR2.ControlStructures.SwitchDeclaration sniff. -->
 
@@ -161,11 +104,6 @@
 		 https://github.com/WordPress/WordPress-Coding-Standards/issues/607 -->
 	<rule ref="Squiz.PHP.DisallowMultipleAssignments"/>
 	<rule ref="Generic.Formatting.DisallowMultipleStatements"/>
-
-	<!-- Rule: Unless absolutely necessary, loose comparisons should not be used,
-		 as their behaviour can be misleading. -->
-	<rule ref="WordPress.PHP.StrictComparisons"/>
-	<rule ref="WordPress.PHP.StrictInArray"/>
 
 	<!-- Rule: Assignments must not be placed in placed in conditionals.
 		 Note: sniff is a duplicate of upstream. Can be removed once minimum PHPCS requirement has gone up.
@@ -233,16 +171,6 @@
 	<!-- There should be no empty statements, i.e. lone semi-colons or open/close tags without content. -->
 	<rule ref="WordPress.CodeAnalysis.EmptyStatement"/>
 
-	<!-- Lowercase PHP constants, like true, false and null. -->
-	<!-- https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#naming-conventions -->
-	<rule ref="Generic.PHP.LowerCaseConstant"/>
-
-	<!-- Lowercase PHP keywords, like class, function and case. -->
-	<rule ref="Generic.PHP.LowerCaseKeyword"/>
-
-	<!-- Class opening braces should be on the same line as the statement. -->
-	<rule ref="Generic.Classes.OpeningBraceSameLine"/>
-
 	<!-- References to self in a class should be lower-case and not have extraneous spaces,
 		 per implicit conventions in the core codebase; the NotUsed code refers to using the
 		 fully-qualified class name instead of self, for which there are instances in core. -->
@@ -304,7 +232,9 @@
 		 https://github.com/WordPress/WordPress-Coding-Standards/pull/1463 -->
 	<rule ref="Squiz.PHP.CommentedOutCode">
 		<properties>
-			<property name="maxPercentage" value="40"/>
+			<!-- Changed percentage to prevent long list of errors, and instead just
+			     give students a nudge that they are having commented out code. -->
+			<property name="maxPercentage" value="70" />
 		</properties>
 	</rule>
 
