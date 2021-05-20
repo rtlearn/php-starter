@@ -1,38 +1,45 @@
-# wp-starter
+# php-starter
 
-This is a Github [template repo](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-template-repository) with just a readme file that you are reading right now and a magical `.github` folder which contains [Github Actions](https://github.com/features/actions) that automatically check your code against [WordPress Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/).
+This is a Github [template repo](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-template-repository) with just a readme file that you are reading right now and a magical `.github` folder which contains [Github Actions](https://github.com/features/actions) that automatically check your PHP codes against some common mistakes.
 
-As you are here, you are most likely looking to work with rtCamp where code quality is very important to us. But even if you have no intention to join rtCamp, you are free to use this repo and automated checks present in it, to improve your WordPress coding skill. 
+This starter repo does NOT check complete [WordPress Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/). For that you can try [wp-starter](https://github.com/rtlearn/wp-starter).
 
-## Usage
+As you are here, you are most likely a student who is working on a PHP programming challenge as part of [rtCamp's Campus hiring](https://learn.rtcamp.com/campus/).
 
-There are three ways to use this template repo:
+In that case you must (generate a Github Classroom Private Repo using this special link)(https://classroom.github.com/a/EX2nMnPK).
 
-### 1. Using Github Classroom Assignment Link
+You can find details about assignment here — https://learn.rtcamp.com/campus/php-assignments/
 
-1. If you are looking to work with rtCamp, it's better to start [using this assignment link](https://classroom.github.com/a/sC4KV_YZ).
-2. When you open the link, Github will prompt you to "Accept this assignment". 
-3. Clicking the "Accept..." button creates a private copy of this repo to which you and rtCamp's evaluators will have access. Your access level for the repo will be admin-level.
-4. You are expected to push all your codes to this new repo. Make sure you do not touch `.github` folder accidentally as it can break the magic.
-5. If you have developed any theme or plugin codes in the past, you are free to push those codes in your private repo. 
-6. When pushing existing large code-base, we request you to commit them in chunks — ideally one PHP file at a time. You can commit all non-PHP files at once as rtBot only checks PHP codes at the moment. It is yet to [Learn JavaScript Deeply](https://wesbos.com/learn-javascript)!
+## ⚠️ Important Guidelines ⚠️
 
-**Advantages**
-1. You will not have to configure anything. You can just accept the assignment from the link and start pushing your codes right away. 
-2. As you are repo-admin for your copy, at any time, you can move the repo to your personal space. After all, you should have right over your code. 
+Please read following carefully. If you miss any of below, rtCamp won't be able evalaute your assignment further.
 
-### 2. "Use this template" option 
+### 1. README.md file
 
-1. You can click "Use this template" button or [visit this link](https://github.com/rtlearn/wp-starter/generate)
-2. You will be prompted to select the name/destination for new repo. 
-3. Please note that you may need to configure automated code review yourself. If you do not, your assignment may not be considered for review.
-   
-### 3. Clone or Fork as a normal repo
+If you are reading this line in [your private repo](https://classroom.github.com/a/EX2nMnPK), then please replace content of this README.md file with your project details. If you do not do this, your submission will NOT be considered.
 
-You are free to do whatever you would like to do with this repo. Please note that you may need to configure automated code review yourself.
+### 2. `.github` folder
 
-## Automated PHPCS checks
-1. The [coding standard rulest](phpcs.xml) in the automated PHPCS checks are configured to check database, security, and basic code analysis related checks mainly. [Ref. to list of rulesets](https://github.com/WordPress/WordPress-Coding-Standards#rulesets).
-2. It will not check for inline code comments, code formatting, and spacing issues, those checks have been excluded. But it is good to have these as well in your code.
-3. [This](https://learn.rtcamp.com/lessons/coding-standards-and-best-practices/) is a good starting point for understanding the WordPress Coding Standards.
-4. [Guide](https://github.com/WordPress/WordPress-Coding-Standards#using-phpcs-and-wpcs-from-within-your-ide) to setup the WordPress Coding Standard checks in your IDE.
+Please Do NOT delete `.github` folder. The folder has codes that starts automated code review.
+One way to ensure that you do not delete this folder accidentally is to avoid `git push --force`.
+
+### 3. `feedback` branch
+
+Please do NOT delete `feedback`branch. The codes in `.github` folder works on `feedback` git branch.
+
+### 4. Pull Requests
+
+Please do NOT merge any pull request on your repo. Pull-requests are automatically created to provide you inline feedback during code-review.
+
+### 5. Live Demo Link
+
+Each PHP web-development assignment requires a live demo. Please use [your private Github repo's](https://classroom.github.com/a/EX2nMnPK). website field to specify your live demo URL.
+Also, include the same live demo URL in your Readme.md content.
+
+### 6. Readme.md reminder.
+
+After you are done reading this, please replace content of this README.md with your project details.
+
+
+
+
