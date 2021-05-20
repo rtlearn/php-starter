@@ -23,20 +23,24 @@ If you are reading this line in [your private repo](https://classroom.github.com
 Please Do NOT delete `.github` folder. The folder has codes that starts automated code review.
 One way to ensure that you do not delete this folder accidentally is to avoid `git push --force`.
 
-### 3. `feedback` branch
+### 3. `phpcs.xml` file
+
+Please Do NOT delete `.phpcs.xml` file. The file tells automated system to do less stringent review of your code. If you delete that file, the automated system will do in-depth code review.
+
+### 4. `feedback` branch
 
 Please do NOT delete `feedback`branch. The codes in `.github` folder works on `feedback` git branch.
 
-### 4. Pull Requests
+### 5. Pull Requests
 
 Please do NOT merge any pull request on your repo. Pull-requests are automatically created to provide you inline feedback during code-review.
 
-### 5. Live Demo Link
+### 6. Live Demo Link
 
 Each PHP web-development assignment requires a live demo. Please use [your private Github repo's](https://classroom.github.com/a/EX2nMnPK). website field to specify your live demo URL.
 Also, include the same live demo URL in your Readme.md content.
 
-### 6. Readme.md reminder.
+### 7. Readme.md reminder.
 
 After you are done reading this, please replace content of this README.md with your project details.
 
