@@ -36,13 +36,12 @@ Please do NOT merge any pull request on your repo. Pull-requests are automatical
 Each PHP web-development assignment requires a live demo. Please use [your private Github repo's](https://classroom.github.com/a/EX2nMnPK). website field to specify your live demo URL.
 Also, include the same live demo URL in your Readme.md content.
 
-![rtlearn_php-starter__Starter_repo_for_PHP_assignments](https://user-images.githubusercontent.com/4115/118948676-200e0000-b976-11eb-9425-7db122da29e8.jpg)
-
-
 ### 6. Readme.md reminder.
 
 After you are done reading this, please replace content of this README.md with your project details.
 
+## Screenshots
 
+Github repos' website field to enter your live demo URL.
 
-
+![rtlearn_php-starter__Starter_repo_for_PHP_assignments](https://user-images.githubusercontent.com/4115/118948676-200e0000-b976-11eb-9425-7db122da29e8.jpg)
