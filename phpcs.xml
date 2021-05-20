@@ -17,11 +17,6 @@
 	<rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
 	<rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
 	<rule ref="Generic.Classes.DuplicateClassName"/>
-	<rule ref="Generic.Strings.UnnecessaryStringConcat">
-		<properties>
-			<property name="allowMultiline" value="true"/>
-		</properties>
-	</rule>
 
 	<!-- More generic PHP best practices.
 		 https://github.com/WordPress/WordPress-Coding-Standards/issues/607 -->
@@ -45,108 +40,6 @@
 	<rule ref="PEAR.Files.IncludingFile.UseRequireOnce">
 		<type>warning</type>
 	</rule>
-
-	<!--
-	#############################################################################
-	Handbook: PHP - Single and Double Quotes.
-	Ref: https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#single-and-double-quotes
-	#############################################################################
-	-->
-	<!-- Covers rule: Use single and double quotes when appropriate.
-		 If you're not evaluating anything in the string, use single quotes. -->
-	<rule ref="Squiz.Strings.DoubleQuoteUsage.NotRequired"/>
-
-	<!-- Rule: Text that goes into attributes should be run through esc_attr().
-		 https://github.com/WordPress/WordPress-Coding-Standards/issues/527 -->
-
-
-	<!--
-	#############################################################################
-	Handbook: PHP - Indentation.
-	Ref: https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#indentation
-	#############################################################################
-	-->
-	<!-- Covers rule: Your indentation should always reflect logical structure. -->
-	<rule ref="Generic.WhiteSpace.ScopeIndent">
-		<properties>
-			<property name="exact" value="false"/>
-			<property name="indent" value="4"/>
-			<property name="tabIndent" value="true"/>
-			<property name="ignoreIndentationTokens" type="array">
-				<element value="T_HEREDOC"/>
-				<element value="T_NOWDOC"/>
-				<element value="T_INLINE_HTML"/>
-			</property>
-		</properties>
-	</rule>
-	<rule ref="WordPress.Arrays.ArrayIndentation"/>
-
-	<!-- Covers rule: Use real tabs and not spaces. -->
-	<rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
-	<rule ref="WordPress.WhiteSpace.PrecisionAlignment"/>
-
-	<!-- Generic array layout check. -->
-	<!-- Covers rule: For associative arrays, each item should start on a new line
-		 when the array contains more than one item.
-		 Also covers various single-line array whitespace issues. -->
-	<rule ref="WordPress.Arrays.ArrayDeclarationSpacing"/>
-
-	<!-- Covers rule: Note the comma after the last array item: this is recommended. -->
-	<rule ref="WordPress.Arrays.CommaAfterArrayItem"/>
-
-	<!-- Covers rule: For switch structures case should indent one tab from the
-		 switch statement and break one tab from the case statement. -->
-	<rule ref="PSR2.ControlStructures.SwitchDeclaration"/>
-	<!-- Prevent duplicate messages for the same issue. Covered by other sniffs. -->
-	<rule ref="PSR2.ControlStructures.SwitchDeclaration.NotLower">
-		<severity>0</severity>
-	</rule>
-	<rule ref="PSR2.ControlStructures.SwitchDeclaration.BreakNotNewLine">
-		<severity>0</severity>
-	</rule>
-	<rule ref="PSR2.ControlStructures.SwitchDeclaration.BodyOnNextLine">
-		<severity>0</severity>
-	</rule>
-
-	<!-- Covers rule: ... while spaces can be used mid-line for alignment. -->
-	<rule ref="WordPress.WhiteSpace.DisallowInlineTabs"/>
-
-	<!-- Implied through the examples: align the assignment operator in a block of assignments. -->
-	<rule ref="Generic.Formatting.MultipleStatementAlignment">
-		<properties>
-			<property name="maxPadding" value="40"/>
-		</properties>
-	</rule>
-
-	<!-- Implied through the examples: align the double arrows. -->
-	<rule ref="WordPress.Arrays.MultipleStatementAlignment">
-		<properties>
-			<property name="maxColumn" value="60"/>
-		</properties>
-	</rule>
-
-
-	<!--
-	#############################################################################
-	Handbook: PHP - Brace Style.
-	Ref: https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#brace-style
-	#############################################################################
-	-->
-	<!-- Covers rule: Braces shall be used for all blocks. -->
-	<rule ref="Squiz.ControlStructures.ControlSignature"/>
-
-	<!-- Covers rule: Braces should always be used, even when they are not required. -->
-	<rule ref="Generic.ControlStructures.InlineControlStructure"/>
-
-
-	<!--
-	#############################################################################
-	Handbook: PHP - Use elseif, not else if.
-	Ref: https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#use-elseif-not-else-if
-	#############################################################################
-	-->
-	<!-- Covers rule: ... use elseif for conditionals. -->
-	<rule ref="PSR2.ControlStructures.ElseIfDeclaration"/>
 
 	<!--
 	#############################################################################
@@ -198,98 +91,8 @@
 	<rule ref="Generic.PHP.DisallowShortOpenTag"/>
 	<rule ref="Generic.PHP.DisallowAlternativePHPTags"/>
 
-
-	<!--
-	#############################################################################
-	Handbook: PHP - Remove Trailing Spaces.
-	Ref: https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#remove-trailing-spaces
-	#############################################################################
-	-->
-	<!-- Covers rule: Remove trailing whitespace at the end of each line of code. -->
-	<rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
-
-	<!-- Covers rule: Omitting the closing PHP tag at the end of a file is preferred. -->
-	<rule ref="PSR2.Files.ClosingTag"/>
-
-
-	<!--
-	#############################################################################
-	Handbook: PHP - Space Usage.
-	Ref: https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#space-usage
-	#############################################################################
-	-->
-	<!-- Covers rule: Always put spaces after commas, and on both sides of logical,
-		 comparison, string and assignment operators. -->
-	<rule ref="WordPress.WhiteSpace.OperatorSpacing"/>
-	<rule ref="Squiz.Strings.ConcatenationSpacing">
-		<properties>
-			<property name="spacing" value="1"/>
-			<property name="ignoreNewlines" value="true"/>
-		</properties>
-	</rule>
-
-	<!-- Covers rule: Define a function like so: function my_function( $param1 = 'foo', $param2 = 'bar' ) { -->
-	<rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie">
-		<properties>
-			<property name="checkClosures" value="true"/>
-		</properties>
-	</rule>
-	<rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
-		<properties>
-			<property name="equalsSpacing" value="1"/>
-			<property name="requiredSpacesAfterOpen" value="1"/>
-			<property name="requiredSpacesBeforeClose" value="1"/>
-		</properties>
-	</rule>
-	<rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingBeforeClose">
-		<severity>0</severity>
-	</rule>
-
-
-	<!-- Covers rule: Call a function, like so: my_function( $param1, func_param( $param2 ) ); -->
-	<rule ref="PEAR.Functions.FunctionCallSignature">
-		<properties>
-			<property name="requiredSpacesAfterOpen" value="1"/>
-			<property name="requiredSpacesBeforeClose" value="1"/>
-
-			<!-- ... and for multi-line function calls, there should only be one parameter per line. -->
-			<property name="allowMultipleArguments" value="false"/>
-		</properties>
-	</rule>
-
-	<rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
-
-	<!-- Rule: Perform logical comparisons, like so: if ( ! $foo ) { -->
-
-	<!-- Covers rule: Type casts must be lowercase. Always prefer the short form
-		 of type casts, (int) instead of (integer) and (bool) rather than (boolean).
-		 For float casts use (float). -->
-	<rule ref="Generic.Formatting.SpaceAfterCast"/>
-	<rule ref="Squiz.WhiteSpace.CastSpacing"/>
-	<rule ref="WordPress.WhiteSpace.CastStructureSpacing"/>
-	<rule ref="WordPress.PHP.TypeCasts"/>
-	<rule ref="PSR12.Keywords.ShortFormTypeKeywords"/>
-	<!-- N.B.: This sniff also checks the case of (parameter/return) type declarations, not just type casts. -->
-	<rule ref="Generic.PHP.LowerCaseType"/>
-
-	<!-- Covers rule: ... array items, only include a space around the index if it is a variable. -->
-	<rule ref="WordPress.Arrays.ArrayKeySpacingRestrictions"/>
-
 	<!-- Rule: In a switch block, there must be no space before the colon for a case statement. -->
 	<!-- Covered by the PSR2.ControlStructures.SwitchDeclaration sniff. -->
-
-	<!--
-	#############################################################################
-	Handbook: PHP - Ternary Operator.
-	Ref: https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#ternary-operator
-	#############################################################################
-	-->
-	<!-- Rule: Always have Ternaries test if the statement is true, not false.
-		 An exception would be using ! empty(), as testing for false here is generally more intuitive.
-		 https://github.com/WordPress/WordPress-Coding-Standards/issues/643 -->
-
-	<!-- Rule: The short ternary operator must not be used. -->
-	<rule ref="WordPress.PHP.DisallowShortTernary"/>
 
 	<!--
 	#############################################################################
@@ -301,11 +104,6 @@
 		 https://github.com/WordPress/WordPress-Coding-Standards/issues/607 -->
 	<rule ref="Squiz.PHP.DisallowMultipleAssignments"/>
 	<rule ref="Generic.Formatting.DisallowMultipleStatements"/>
-
-	<!-- Rule: Unless absolutely necessary, loose comparisons should not be used,
-		 as their behaviour can be misleading. -->
-	<rule ref="WordPress.PHP.StrictComparisons"/>
-	<rule ref="WordPress.PHP.StrictInArray"/>
 
 	<!-- Rule: Assignments must not be placed in placed in conditionals.
 		 Note: sniff is a duplicate of upstream. Can be removed once minimum PHPCS requirement has gone up.
@@ -370,28 +168,8 @@
 		</properties>
 	</rule>
 
-	<!-- No whitespace should come before semicolons. -->
-	<rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
-
 	<!-- There should be no empty statements, i.e. lone semi-colons or open/close tags without content. -->
 	<rule ref="WordPress.CodeAnalysis.EmptyStatement"/>
-
-	<!-- Lowercase PHP constants, like true, false and null. -->
-	<!-- https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#naming-conventions -->
-	<rule ref="Generic.PHP.LowerCaseConstant"/>
-
-	<!-- Lowercase PHP keywords, like class, function and case. -->
-	<rule ref="Generic.PHP.LowerCaseKeyword"/>
-
-	<!-- Class opening braces should be on the same line as the statement. -->
-	<rule ref="Generic.Classes.OpeningBraceSameLine"/>
-
-	<!-- Object operators should not have whitespace around them unless they are multi-line. -->
-	<rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing">
-		<properties>
-			<property name="ignoreNewlines" value="true"/>
-		</properties>
-	</rule>
 
 	<!-- References to self in a class should be lower-case and not have extraneous spaces,
 		 per implicit conventions in the core codebase; the NotUsed code refers to using the
@@ -400,11 +178,6 @@
 	<rule ref="Squiz.Classes.SelfMemberReference.NotUsed">
 		<severity>0</severity>
 	</rule>
-
-	<!-- Check correct spacing of language constructs. This also ensures that the
-	     above rule for not using brackets with require is fixed correctly.
-		 https://github.com/WordPress/WordPress-Coding-Standards/issues/1153 -->
-	<rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
 
 	<!-- Hook callbacks may not use all params -->
 	<!-- https://github.com/WordPress/WordPress-Coding-Standards/pull/382#discussion_r29981655 -->
@@ -420,7 +193,6 @@
 		 https://github.com/WordPress/WordPress-Coding-Standards/issues/1101 -->
 	<rule ref="Squiz.Scope.MethodScope"/>
 	<rule ref="PSR2.Classes.PropertyDeclaration"/>
-	<rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing"/>
 	<rule ref="PSR2.Methods.MethodDeclaration"/>
 
 	<!-- Warn against using fully-qualified class names instead of the self keyword. -->
@@ -460,7 +232,9 @@
 		 https://github.com/WordPress/WordPress-Coding-Standards/pull/1463 -->
 	<rule ref="Squiz.PHP.CommentedOutCode">
 		<properties>
-			<property name="maxPercentage" value="40"/>
+			<!-- Changed percentage to prevent long list of errors, and instead just
+			     give students a nudge that they are having commented out code. -->
+			<property name="maxPercentage" value="70" />
 		</properties>
 	</rule>
 
