@@ -40,9 +40,20 @@ Please do NOT merge any pull request on your repo. Pull-requests are automatical
 Each PHP web-development assignment requires a live demo. Please use [your private Github repo's](https://classroom.github.com/a/EX2nMnPK). website field to specify your live demo URL.
 Also, include the same live demo URL in your Readme.md content.
 
-### 7. Readme.md reminder.
+### 7. Readme.md reminder
 
 After you are done reading this, please replace content of this README.md with your project details.
+
+### 8. Things we look for / Common PHP Errors
+
+* Beware of SQL injection vulnerabilities. See [BobbyTables.com](https://bobby-tables.com/) and [BobbyTables.com/php](https://bobby-tables.com/php). (Sanitize input.) See `filter_input()` or MySQL sanitize strings or `prepare()` & `bind()` values.
+* Beware of Cross-Site-Scripting vulnerabilities (XSS). (Escape output and validate input). This means don't `echo` or `print` anything that might come from `$_POST` or `$_GET` (user input) without first stripping tags or sanitizing the value.
+* Validate any email subscribe and unsubscribe actions with a verification token.
+* Any Cron scripts or SQL dumps should be stored in non-public directories (outside of web root).
+* Don't commit database credentials to the repository. Use examples. Use a configuration file for common / repeating settings such as DB credentials, email credentials, or "From" addresses.
+* Use `__DIR__`, `basename()`, or both when using `require` or `include`. Starting from current directory scans all folders in `include_path`.
+* `require` and `include` are language constructs, not functions. Don't use parenthesis.
+* Use single-quotes if not parsing variables in strings in PHP.
 
 ## Screenshots
 
