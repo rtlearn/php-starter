@@ -40,11 +40,15 @@ Please do NOT merge any pull request on your repo. Pull-requests are automatical
 Each PHP web-development assignment requires a live demo. Please use [your private Github repo's](https://classroom.github.com/a/EX2nMnPK). website field to specify your live demo URL.
 Also, include the same live demo URL in your Readme.md content.
 
-### 7. Readme.md reminder
+### 7. Watch out for common mistakes
+
+Please check the entire section added below to avoid common mistakes. They are serious and lead to rejection.
+
+### 8. Readme.md reminder
 
 After you are done reading this, please replace content of this README.md with your project details.
 
-### 8. Things we look for / Common PHP Errors
+## Common Mistakes / PHP Errors
 
 * Beware of SQL injection vulnerabilities. See [BobbyTables.com](https://bobby-tables.com/) and [BobbyTables.com/php](https://bobby-tables.com/php). (Sanitize input.) See `filter_input()` or MySQL sanitize strings or `prepare()` & `bind()` values.
 * Beware of Cross-Site-Scripting vulnerabilities (XSS). (Escape output and validate input). This means don't `echo` or `print` anything that might come from `$_POST` or `$_GET` (user input) without first stripping tags or sanitizing the value.
