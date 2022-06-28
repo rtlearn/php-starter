@@ -1,0 +1,15 @@
+name: gitleaks
+on: pull_request
+
+jobs:
+  gitleaks:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
+    - name: gitleaks-action
+      uses: zricethezav/gitleaks-action@master
+    - name: Cleanup
+      if: ${{ always() }}
+      uses: rtCamp/action-cleanup@master
