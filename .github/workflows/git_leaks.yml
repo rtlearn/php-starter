@@ -9,7 +9,7 @@ jobs:
       with:
         fetch-depth: '0'
     - name: gitleaks-action
-      uses: gitleaks/gitleaks-action@v1.6.0
+      uses: dhsathiya/gitleaks-action@main
     - name: Cleanup
       if: ${{ always() }}
       uses: rtCamp/action-cleanup@master
