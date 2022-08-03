@@ -168,9 +168,6 @@
 		</properties>
 	</rule>
 
-	<!-- There should be no empty statements, i.e. lone semi-colons or open/close tags without content. -->
-	<rule ref="WordPress.CodeAnalysis.EmptyStatement"/>
-
 	<!-- References to self in a class should be lower-case and not have extraneous spaces,
 		 per implicit conventions in the core codebase; the NotUsed code refers to using the
 		 fully-qualified class name instead of self, for which there are instances in core. -->
